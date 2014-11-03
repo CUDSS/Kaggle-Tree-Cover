@@ -1,0 +1,55 @@
+#copy the repository from github
+git clone https://github.com/CUDSS/Kaggle-Tree-Cover.git
+
+#change to the directory 
+cd Kaggle-Tree-Cover
+
+#create a new file
+touch somenewfile.txt
+
+#register the file with the git repository
+git add somenewfile.txt
+
+#Has anything changed?
+git status
+
+#commit the change to the repository (i.e. the fact we added a new file)
+git commit -am "Just testing stuff out..."
+
+#make a new branch
+git branch testzone
+
+#switch to the new branch
+git checkout testzone
+
+#make a new file on the branch
+touch anothernewfile.txt
+ls
+#git add everything in the folder:
+git add . 
+git commit -am "Adding some stuff"
+git checkout master
+ls
+#observe our new file disappeared? or did it?
+git checkout testzone
+ls
+
+#uploading the change - the following says: 
+#	"git: I want you to upload the branch called master to somewhere called origin (the place we cloned from)"
+# !You will need a password etc.
+git push origin master
+
+#How about uploading the other branch in our repository?
+git push origin testzone
+
+#getting updates from the server - i.e. you don't have to delete and reclone
+git pull origin
+
+#See who worked on a file:
+git blame README.md
+
+#See other branches available in the repository
+git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+
+#Find out more:
+firefox http://git-scm.com/book/en/v2
