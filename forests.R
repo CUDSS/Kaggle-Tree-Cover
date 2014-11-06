@@ -27,7 +27,7 @@ preds.1 <- predict(model.1) #Return predictions for the training data
 
 ### Assessment
 
-correct.1 <- (as.numeric(Y) - as.numeric(preds))==0 #which ones did we get right?
+correct.1 <- (as.numeric(Y) - as.numeric(preds.1))==0 #which ones did we get right?
 sum(correct.1) / nrow(X) #what fraction did we get right (WARNING: in the training data!!)?
 
 ### Prepare a submission
